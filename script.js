@@ -1,16 +1,11 @@
 $(document).ready(function(){
 
-  $(".choix").hover(function(){
-  	//$(this).css("background", "#212529");
-  	$(this).find("h3").css("font-weight", "bold");
+  $(".c").hover(function(){
+  	$(this).find(".o").fadeTo("fast", 1);
   },
     function(){
         //$(this).css("background", "white");
-        $(this).find("h3").css("font-weight", "normal");
+        $(this).find(".o").fadeTo("fast", "0");
     });
-
-  $(".choix").click(function() {
-    window.location = $(this).find("a").attr("href");
-});
   
 })
