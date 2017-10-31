@@ -55,7 +55,7 @@ $(document).ready(function(){
 			$(row).addClass("row");
 			$(slide).addClass("col-md-12 slide");
  			$(div8).addClass("col-md-8");
- 			$(div4).addClass("col-md-4");
+ 			$(div4).addClass("col-md-4 text-right");
 			$(button).addClass("btn btn-info btn-sm");
 
 			$(row).css("padding-bottom", "10px");
