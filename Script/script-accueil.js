@@ -1,8 +1,8 @@
 $(document).ready(function(){
   $(".jumbotron h1").delay(500).fadeTo("slow",1);
-  $(".jumbotron h2").delay(2000).fadeTo("slow", 1);
-  $(".container").delay(4000).fadeTo("Slow", 1);
-  $("html body").delay(3000).animate({ backgroundColor: "transparent" }, 1000);
+  $(".jumbotron h2").delay(3000).fadeTo("slow", 1);
+  $(".container").delay(5500).fadeTo("Slow", 1);
+  $("html body").delay(4500).animate({ backgroundColor: "#f7f7f7" }, 1000);
 
 
   $(".c").hover(function(){
