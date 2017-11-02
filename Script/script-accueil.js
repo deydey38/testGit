@@ -1,4 +1,9 @@
 $(document).ready(function(){
+  $(".jumbotron h1").delay(500).fadeTo("slow",1);
+  $(".jumbotron h2").delay(2000).fadeTo("slow", 1);
+  $(".container").delay(4000).fadeTo("Slow", 1);
+  $("html body").delay(3000).animate({ backgroundColor: "transparent" }, 1000);
+
 
   $(".c").hover(function(){
   	$(this).find(".o").fadeTo("fast", 1);

@@ -7,7 +7,10 @@
     "bootstrap": "^4.0.0-beta",
     "jquery": "^3.2.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
