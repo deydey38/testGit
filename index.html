@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css" >
     <script src="node_modules/jquery/dist/jquery.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css" >
+    <link rel="stylesheet" type="text/css" href="Style/style.css" >
     <title> SWAPI - Menu </title>
   </head>
   <body>
 
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center index">
       <h1>Retrouves des infos sur Star Wars</h1>
+      <h2>Sélectionne la catégorie de ton choix</h2>
     </div>
 
 <div class="container">
-  <div class="row">
+  <div class="row ">
 
     <div  class="col-sm-4 choix c">
       <div id="personnages">
@@ -28,10 +29,9 @@
       </div>
     </div>
 
-    <div class="col-sm-4 choix c">
+    <div class="col-sm-4 choix c" value="personnages">
       <div id="planetes">
         <a href="planetes.html">
-          <img src="Photo/planete.jpg" alt="Avatar" class="image img-responsive" >
           <div class="o">
             <div class="text">Planètes</div>
           </div>
@@ -43,7 +43,6 @@
     <div class="col-sm-4 choix c">
       <div id="vaisseaux">
         <a href="vaisseaux.html">
-          <img src="Photo/vaisseau.jpg" alt="Avatar" class="image" >
           <div class="o">
             <div class="text">Vaisseaux</div>
           </div>
@@ -52,8 +51,14 @@
     </div>
 
   </div>
+
+  <div class="row desc-row">
+    <div class="desc-div personnages-desc">Découvres des informations sur tes personnages préférés !</div>
+    <div class="desc-div planetes-desc">Découvres des informations sur les planètes de STAR WARS !</div>
+    <div class="desc-div vaisseaux-desc">Découvres des informations sur les vaisseaux de STAR WARS !</div>
+  </div>
 </div>
 
-  <script src="script.js"></script>
+  <script src="Script/script-index.js"></script>
   </body>
 </html>

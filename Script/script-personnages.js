@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  var opts = {
+	var opts = {
       lines: 11, // The number of lines to draw
       length: 28, // The length of each line
       width: 2, // The line thickness
@@ -17,36 +17,38 @@ $(document).ready(function(){
       zIndex: 2e9, // The z-index (defaults to 2000000000)
       top: 'auto', // Top position relative to parent in px
       left: 'auto' // Left position relative to parent in px
-  };
+};
 
-  var spinner = null;
-  var spinner_div = 0;
-  spinner_div = $('#spinner').get(0);
-  if(spinner == null) {
-	   spinner = new Spinner(opts).spin(spinner_div);
-  }else {
-	    spinner.spin(spinner_div);
-  }
+
+
+var spinner = null;
+var spinner_div = 0;
+spinner_div = $('#spinner').get(0);
+if(spinner == null) {
+	spinner = new Spinner(opts).spin(spinner_div);
+}else {
+	spinner.spin(spinner_div);
+}
+
 
 	$(".navbar-brand").hover(function(){
-    $(this).css("color", "grey");
+    $(this).css("color", "teal");
   },
   function(){
       $(this).css("color", "white");
   });
 
-  $(".jumbotron").css("margin-bottom", "0");
+	$(".jumbotron").css("margin-bottom", "0");
 
-  $('.vaisseaux').css('margin-bottom', '32px');
+	$('.perso').css('margin-bottom', '32px');
 
-  $('.navbar').css('margin-bottom', '32px');
+	$('.navbar').css('margin-bottom', '32px');
 
-  $.get( "https://swapi.co/api/vehicles/?format=json", function( data ) {
-    //$( ".perso" ).html( data.results );
-    spinner.stop(spinner_div);
-    $.each(data.results, function(index, value){
-      console.log(index, value);
-      var row = document.createElement("div");
+	$.get( "https://swapi.co/api/people/?format=json", function( data ) {
+		spinner.stop(spinner_div);
+		$.each(data.results, function(index, value){
+			console.log(index, value);
+			var row = document.createElement("div");
  			var div8 = document.createElement("div");
  			var div4 = document.createElement("div");
 			var slide = document.createElement("div");
@@ -65,12 +67,20 @@ $(document).ready(function(){
 			$(div8).html("<h4>"+value.name+"</h4>");
 			$(button).html("Plus d\'informations");
 
-			$(slide).append("Coûts : "+value.cost_in_credits+" crédits impériaux"+'<br/>');
-			$(slide).append("Nombre de passager(s) : "+value.crew+'<br/>');
-			$(slide).append("Vitesse maximale : "+value.max_atmosphering_speed+"km/h"+'<br/>');
+			$(slide).append('Date de naissance : '+value.birth_year+'<br/>');
+			$(slide).append("Poids : "+value.mass+"kg"+'<br/>');
+			$(slide).append("Taille : "+value.height+"cm"+'<br/>');
+			$.get(value.species, function(data){
+				//$(slide).append("Espèce : "+data.height+"cm"+'<br/>');
+				$(slide).append("Espece : "+data.name+'<br/>');
+			});
+			$.get(value.homeworld, function(data){
+				//$(slide).append("Espèce : "+data.height+"cm"+'<br/>');
+				$(slide).append("Résidence : "+data.name+'<br/>');
+			});
 
 			$(div4).append(button);
-			$(".vaisseaux").append(row);
+			$(".perso").append(row);
 			$(row).append(div8);
 			$(div8).after(div4);
 			$(row).append(slide);
@@ -84,7 +94,8 @@ $(document).ready(function(){
 				}
     	});
 		});
-    $(".vaisseaux .row").last().css("border-bottom", "none");
+		$(".perso .row").last().css("border-bottom", "none");
+
   });
 
 });

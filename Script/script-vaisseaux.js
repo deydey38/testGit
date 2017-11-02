@@ -29,7 +29,7 @@ $(document).ready(function(){
   }
 
 	$(".navbar-brand").hover(function(){
-    $(this).css("color", "grey");
+    $(this).css("color", "teal");
   },
   function(){
       $(this).css("color", "white");
@@ -37,11 +37,12 @@ $(document).ready(function(){
 
   $(".jumbotron").css("margin-bottom", "0");
 
-  $('.planetes').css('margin-bottom', '32px');
+  $('.vaisseaux').css('margin-bottom', '32px');
 
   $('.navbar').css('margin-bottom', '32px');
 
-  $.get( "https://swapi.co/api/planets/?format=json", function( data ) {
+  $.get( "https://swapi.co/api/vehicles/?format=json", function( data ) {
+    //$( ".perso" ).html( data.results );
     spinner.stop(spinner_div);
     $.each(data.results, function(index, value){
       console.log(index, value);
@@ -55,7 +56,7 @@ $(document).ready(function(){
 			$(slide).addClass("col-md-12 slide");
  			$(div8).addClass("col-md-8");
  			$(div4).addClass("col-md-4 text-right");
-			$(button).addClass("btn btn-info btn-sm ");
+			$(button).addClass("btn btn-info btn-sm");
 
 			$(row).css("padding-bottom", "10px");
 			$(row).css("padding-top", "10px");
@@ -64,12 +65,12 @@ $(document).ready(function(){
 			$(div8).html("<h4>"+value.name+"</h4>");
 			$(button).html("Plus d\'informations");
 
-			$(slide).append('Climat : '+value.climate+'<br/>');
-			$(slide).append("Diamètre : "+value.diameter+"m"+'<br/>');
-			$(slide).append("Periode orbitale : "+value.orbital_period+" jours"+'<br/>');
+			$(slide).append("Coûts : "+value.cost_in_credits+" crédits impériaux"+'<br/>');
+			$(slide).append("Nombre de passager(s) : "+value.crew+'<br/>');
+			$(slide).append("Vitesse maximale : "+value.max_atmosphering_speed+"km/h"+'<br/>');
 
 			$(div4).append(button);
-			$(".planetes").append(row);
+			$(".vaisseaux").append(row);
 			$(row).append(div8);
 			$(div8).after(div4);
 			$(row).append(slide);
@@ -83,8 +84,7 @@ $(document).ready(function(){
 				}
     	});
 		});
-
-    $(".planetes .row").last().css("border-bottom", "none");
+    $(".vaisseaux .row").last().css("border-bottom", "none");
   });
 
 });
