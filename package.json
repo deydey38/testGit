@@ -5,7 +5,8 @@
   "main": "popper.js",
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "scroll-parallax": "^2.0.2"
   },
   "devDependencies": {
     "jquery": "^3.2.1",

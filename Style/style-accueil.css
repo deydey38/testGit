@@ -9,10 +9,16 @@
   height:100%;
 }
 
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
+img{
+  position:fixed;
+  right:0;
+  left:0;
+  margin-left:auto;
+  margin-right:auto;
+  width:300px;
+  height:300px;
+  opacity:0;
+  border-radius:50%;
 }
 
 body{
@@ -103,8 +109,8 @@ h1, h2{
 }
 
 .desc-div{
-  disaply:none;
   opacity: 0;
+  display:none;
 }
 
 .desc-row{
@@ -117,4 +123,8 @@ h1, h2{
 
 .vaisseaux-desc{
   text-align: right;
+}
+
+.div{
+  display:none;
 }

@@ -1,8 +1,13 @@
 $(document).ready(function(){
-  $(".jumbotron h1").delay(500).fadeTo("slow",1);
-  $(".jumbotron h2").delay(3000).fadeTo("slow", 1);
-  $(".container").delay(5500).fadeTo("Slow", 1);
-  $("html body").delay(4500).animate({ backgroundColor: "#f7f7f7" }, 1000);
+  $("img").delay(500).fadeTo("slow",1);
+  $(".jumbotron h1").delay(2000).fadeTo("fast",1);
+  $("img").delay(4000).fadeTo("slow",0);
+  $(".jumbotron h2").delay(4000).fadeTo("fast", 1);
+  $("html body").delay(6500).animate({ backgroundColor: "#f4f4f4" }, 1000);
+  $(".container").delay(7300).fadeTo("Slow", 1);
+  $("#personnages").delay(7500).fadeIn(500);
+  $("#planetes").delay(7300).fadeIn(500);
+  $("#vaisseaux").delay(7700).fadeIn(500);
 
 
   $(".c").hover(function(){
