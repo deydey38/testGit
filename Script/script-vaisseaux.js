@@ -43,9 +43,48 @@ $(document).ready(function(){
 
   $.get( "https://swapi.co/api/vehicles/?format=json", function( data ) {
     //$( ".perso" ).html( data.results );
-    spinner.stop(spinner_div);
+    chargement(data);
+  });
+
+  function chargement(data){
+    $(".vaisseaux").html("");
+		spinner.stop(spinner_div);
+		var pagination = document.createElement("div");
+		$(pagination).addClass("row pagination");
+		$(".vaisseaux").prepend(pagination);
+		if(data.previous!=null){
+			var previous = data.previous;
+			//console.log(next);
+			var previous = document.createElement("button");
+			$(previous).addClass("btn btn-info btn-sm previous");
+			$(previous).html("Précédent");
+			$(previous).css("margin-right", "10px");
+			$(".pagination").append(previous);
+			$(".previous").click(function() {
+				spinner.spin(spinner_div);
+				console.log("previous");
+				$.get( data.previous, function( data ) {
+					chargement(data);
+			  });
+			});
+		}
+		if(data.next!=null){
+			var next = data.next;
+			//console.log(next);
+			var next = document.createElement("button");
+			$(next).addClass("btn btn-info btn-sm next");
+			$(next).html("Suivant");
+			$(".pagination").append(next);
+			$(".next").click(function() {
+				spinner.spin(spinner_div);
+				console.log("next");
+				$.get( data.next, function( data ) {
+					chargement(data);
+			  });
+			});
+		}
     $.each(data.results, function(index, value){
-      console.log(index, value);
+      //console.log(index, value);
       var row = document.createElement("div");
  			var div8 = document.createElement("div");
  			var div4 = document.createElement("div");
@@ -85,6 +124,6 @@ $(document).ready(function(){
     	});
 		});
     $(".vaisseaux .row").last().css("border-bottom", "none");
-  });
+  }
 
 });
